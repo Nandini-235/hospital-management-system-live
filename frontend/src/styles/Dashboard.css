@@ -1,0 +1,242 @@
+/* Dashboard Common Styles */
+.dashboard-container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.sidebar .MuiListItemButton-root {
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar .MuiListItemButton-root:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.sidebar .MuiListItemButton-root.Mui-selected {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #fff;
+}
+
+.sidebar .MuiListItemIcon-root {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar .MuiListItemButton-root.Mui-selected .MuiListItemIcon-root {
+  color: white;
+}
+
+/* Card Animations */
+.MuiCard-root {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats Cards */
+.stats-card {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.stats-card.primary {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stats-card.secondary {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stats-card.warning {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Table Styles */
+.MuiTableContainer-root {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.MuiTableHead-root {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  color: white;
+  font-weight: 600;
+}
+
+.MuiTableRow-root:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.MuiTableRow-root:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Button Styles */
+.action-button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  text-transform: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: scale(1.05);
+}
+
+/* Form Styles */
+.form-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Status Chips */
+.status-chip {
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* Waiting Time Indicators */
+.waiting-time-low {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.waiting-time-medium {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+.waiting-time-high {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+/* Prescription Cards */
+.prescription-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+}
+
+.prescription-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Patient Queue Styles */
+.queue-item {
+  border-radius: 12px;
+  margin-bottom: 8px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.queue-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.queue-item.urgent {
+  border-left: 4px solid #f44336;
+}
+
+.queue-item.high-priority {
+  border-left: 4px solid #ff9800;
+}
+
+/* Dialog Styles */
+.MuiDialog-paper {
+  border-radius: 16px;
+}
+
+.dialog-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,248 @@
+/* Login Page Styles */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-paper {
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo .MuiSvgIcon-root {
+  font-size: 64px;
+  margin-bottom: 16px;
+  color: #667eea;
+  drop-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+/* Form Styles */
+.login-form {
+  width: 100%;
+}
+
+.login-tabs {
+  margin-bottom: 24px;
+}
+
+.login-tabs .MuiTab-root {
+  text-transform: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.login-tabs .MuiTabs-indicator {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 3px;
+  border-radius: 3px;
+}
+
+.MuiTextField-root {
+  margin-bottom: 16px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+}
+
+.login-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 25px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  background: #ccc;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Demo Credentials Box */
+.demo-credentials {
+  background: linear-gradient(135deg, #f093fb 10%, #f5576c 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.demo-credentials .MuiTypography-root {
+  color: white;
+}
+
+/* Alert Styles */
+.MuiAlert-root {
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* Select Styles */
+.MuiSelect-root {
+  border-radius: 12px;
+}
+
+/* Loading Button */
+.loading-button .MuiCircularProgress-root {
+  color: white;
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 16px;
+  }
+  
+  .login-paper {
+    padding: 24px;
+    margin: 16px;
+  }
+  
+  .login-logo .MuiSvgIcon-root {
+    font-size: 48px;
+  }
+  
+  .login-title {
+    font-size: 2rem;
+  }
+}
+
+/* Animation for form switching */
+.form-slide-enter {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.form-slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.form-slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form-slide-exit-active {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+/* Floating elements */
+.floating-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-element:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: 40%;
+  left: 90%;
+  animation-delay: 4s;
+}
